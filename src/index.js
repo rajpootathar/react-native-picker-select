@@ -270,18 +270,9 @@ export default class RNPickerSelect extends PureComponent {
 
     renderPickerItems() {
         const { items } = this.state;
-        const defaultItemColor = this.isDarkTheme() ? '#fff' : undefined;
 
-        return items.map((item) => {
-            return (
-                <Picker.Item
-                    label={item.label}
-                    value={item.value}
-                    key={item.key || item.label}
-                    color={item.color || defaultItemColor}
-                    testID={item.testID}
-                />
-            );
+        return items.map(() => {
+            return null;
         });
     }
 
@@ -476,7 +467,9 @@ export default class RNPickerSelect extends PureComponent {
                             onValueChange={this.onValueChange}
                             selectedValue={selectedItem.value}
                             {...pickerProps}
-                        ></Picker>
+                        >
+                            {this.renderPickerItems()}
+                        </Picker>
                     </View>
                 </Modal>
             </View>
