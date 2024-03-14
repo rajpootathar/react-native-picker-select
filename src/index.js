@@ -476,9 +476,7 @@ export default class RNPickerSelect extends PureComponent {
                             onValueChange={this.onValueChange}
                             selectedValue={selectedItem.value}
                             {...pickerProps}
-                        >
-                            {this.renderPickerItems()}
-                        </Picker>
+                        ></Picker>
                     </View>
                 </Modal>
             </View>
